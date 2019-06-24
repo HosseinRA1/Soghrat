@@ -11,7 +11,7 @@ const splash = StyleSheet.create({
         width: wp('30%'),
         height: hp('30%') ,
         resizeMode:'contain'
-    }
+    },
 });
 
 export default splash;

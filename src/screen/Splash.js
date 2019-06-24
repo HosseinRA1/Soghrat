@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import LinearGradient from "react-native-linear-gradient"
-import {Image, StatusBar} from 'react-native'
+import {Image, StatusBar } from 'react-native'
 import splash from '../assets/styles/splash'
 
 export default class Splash extends Component {
