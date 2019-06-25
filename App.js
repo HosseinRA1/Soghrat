@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import QuestionsPage from "./src/screen/QuestionsPage";
+import Splash from "./src/screen/Splash";
 
 export default class App extends Component {
   render() {
     return (
-      <QuestionsPage/>
+      <Splash/>
     );
   }
 }
