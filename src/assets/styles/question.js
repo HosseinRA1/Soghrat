@@ -5,6 +5,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const question = StyleSheet.create({
     container : {
         flex: 1,
+
     },
     topImage: {
         width: wp('30%'),
