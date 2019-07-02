@@ -6,8 +6,10 @@ import Text from "../../components/Text";
 import question from "../../assets/styles/question";
 import {StatusBar} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
+import {Actions} from 'react-native-router-flux'
 
 export default class Home extends Component {
+    _start = () => Actions.replace('question_page');
     render() {
         return (
             <LinearGradient colors={['#023d4f', '#011828']}
@@ -34,7 +36,7 @@ export default class Home extends Component {
                            <Text h2>فعالیت</Text>
                        </TouchableOpacity>
 
-                       <TouchableOpacity activeOpacity = {.9} style = {home.startButton}>
+                       <TouchableOpacity onPress = {this._start} activeOpacity = {.9} style = {home.startButton}>
                            <Icon name='md-play' style={home.startIcon}/>
                            <Text h2>شروع</Text>
                        </TouchableOpacity>

@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import LinearGradient from "react-native-linear-gradient";
-import {View, Image, TouchableOpacity} from "react-native";
+import {View, Image, StatusBar} from "react-native";
 import splash from "../assets/styles/splash";
 import AppIntroSlider from "react-native-app-intro-slider";
 import Text from "../components/Text";
 import intro from "../assets/styles/intro";
 import CustomButton from "../components/CustomButton";
+import {Actions} from "react-native-router-flux";
 
 const slides = [
     {
@@ -29,7 +30,7 @@ export default class Intro extends Component {
     _renderItem = (item) => {
         return (
             <View style = {intro.description}>
-                <Text style = {{textAlign : 'center'}} h4>{item.text}</Text>
+                <Text style = {intro.text} h4>{item.text}</Text>
             </View>
         );
     };
@@ -38,6 +39,7 @@ export default class Intro extends Component {
         return (
             <LinearGradient colors={['#023d4f', '#011828']}
                             style={intro.container}>
+                <StatusBar hidden/>
                 <View>
                     <Image source={require('./../assets/images/logo-png.png')}
                            style={splash.logo}/>
@@ -46,12 +48,14 @@ export default class Intro extends Component {
                 <AppIntroSlider
                     renderItem={this._renderItem}
                     slides={slides}
-                    paginationStyle ={{padding : 20}}
-                    activeDotStyle = {{backgroundColor : '#ff5f74'}}
-                    dotStyle = {{backgroundColor : 'white'}}
+                    paginationStyle ={intro.pagination}
+                    activeDotStyle = {intro.activeDot}
+                    dotStyle = {intro.dot}
+                    showNextButton = {false}
+                    showDoneButton = {false}
                 />
               <View style = {intro.skip}>
-                  <CustomButton small >
+                  <CustomButton small onPress={() => Actions.replace('login')}>
                       بلدم
                   </CustomButton>
               </View>

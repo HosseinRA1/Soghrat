@@ -38,6 +38,31 @@ const question = StyleSheet.create({
         width :wp('25%'),
         paddingTop: wp('5%'),
         alignItems : 'center'
+    },
+    questionView : {
+        alignItems : 'center',
+        justifyContent: 'center',
+        padding : 20,
+        marginTop : 30
+    },
+    questionText :{
+        textAlign : 'center'
+    },
+    bottomIcons : {
+        flexDirection: 'row',
+        justifyContent : 'space-evenly',
+        alignItems : 'center',
+        padding:10
+    },
+    contentStyle : {
+        alignItems: 'center', justifyContent: 'center'
+    },
+    answerButtonView : {
+        marginTop: hp('4%')
+    },
+    nextQuestionButton : {
+        textDecorationLine : 'underline', alignSelf : 'center' , marginTop : hp('4%')
     }
+
 });
 export default question;

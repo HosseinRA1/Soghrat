@@ -19,6 +19,18 @@ const intro = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: 40
+    },
+    pagination : {
+        padding: 20
+    },
+    activeDot : {
+        backgroundColor : '#ff5f74'
+    },
+    dot : {
+        backgroundColor : 'white'
+    },
+    text : {
+        textAlign : 'center'
     }
 });
 

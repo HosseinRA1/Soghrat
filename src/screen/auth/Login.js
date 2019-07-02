@@ -20,14 +20,10 @@ export default class Login extends Component {
             this.setState({correct: true})
         }
     };
-   /* _send = () => {
-        if (this.state.text === "") {
-            this.setState(() => ({ nameError: "First name required."}));
-        } else {
-            this.setState(() => ({ nameError: null}));
-        }
-    };*/
 
+    _send = () => {
+        Actions.push('verify')
+    };
     render() {
         const isCorrect =this.state.correct;
         return (
@@ -48,12 +44,9 @@ export default class Login extends Component {
                                 keyboardType='number-pad'
                                 maxLength={11}
                                 style={[login.input , {borderColor : isCorrect ? 'white' : 'red', letterSpacing : 5}]}/>
-                           {/* {!!this.state.nameError && (
-                                <Text style={{color: 'red'}}>{this.state.nameError}</Text>
-                            )}*/}
                         </View>
                         <View style = {login.buttonView}>
-                            <CustomButton onPress={() => Actions.replace('splash')} icon>
+                            <CustomButton  onPress={this._send} icon>
                                 مرحله بعد
                             </CustomButton>
                         </View>

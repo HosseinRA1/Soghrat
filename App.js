@@ -11,18 +11,18 @@ export default class App extends Component {
     render() {
         return (
             <Router>
-                <Stack key='root' initial hideNavBar>
-                    <Scene key='splash' component={Splash} initial/>
-                    <Scene key='intro' component={Intro} initial/>
+                <Stack key='root'  hideNavBar>
+                    <Scene key='splash' component={Splash} />
+                    <Scene key='intro' component={Intro}/>
 
-                    <Scene key='auth' hideNavBar >
+                    <Scene key='auth'  hideNavBar>
                         <Scene key='login' component={Login} />
                         <Scene key='verify' component={Verify} />
                     </Scene>
 
-                    <Scene key='home' hideNavBar>
-                        <Scene key='home' component={Home} />
-                        <Scene key='question_page' component={QuestionsPage}/>
+                    <Scene key='main' hideNavBar initial>
+                        <Scene key='home' component={Home} initial/>
+                        <Scene key='question_page' component={QuestionsPage} />
                     </Scene>
                 </Stack>
             </Router>
