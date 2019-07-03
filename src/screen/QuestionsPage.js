@@ -59,10 +59,6 @@ export default class QuestionsPage extends Component {
                         <Icon name='md-star' style={{color: '#ffd515'}}/>
                         <Text>2 امتیازی</Text>
                     </View>
-                   {/* <View style={{alignItems: 'center'}}>
-                        <Icon name='ios-heart-outline' style={{color: 'gray'}}/>
-                        <Text>12</Text>
-                    </View>*/}
                     <View style={{alignItems: 'center'}}>
                         <Icon name='md-heart' style={{color: '#ae0600'}}/>
                         <Text>452</Text>

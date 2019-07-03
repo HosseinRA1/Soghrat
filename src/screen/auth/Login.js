@@ -6,7 +6,7 @@ import LinearGradient from "react-native-linear-gradient";
 import question from "../../assets/styles/question";
 import CustomButton from "../../components/CustomButton";
 import Text from "../../components/Text";
-import {Actions} from "react-native-router-flux";
+import BaseModal from "../../components/BaseModal";
 
 export default class Login extends Component {
     state = { text: '', correct:true };
@@ -22,7 +22,7 @@ export default class Login extends Component {
     };
 
     _send = () => {
-        Actions.push('verify')
+        this.modal._toggleModal();
     };
     render() {
         const isCorrect =this.state.correct;
@@ -50,6 +50,16 @@ export default class Login extends Component {
                                 مرحله بعد
                             </CustomButton>
                         </View>
+                        <BaseModal ref = {(ref) => this.modal = ref}>
+                            <View style = {{alignSelf : 'center'}}>
+                                <Text h3 style = {{textAlign:'center'}} color = 'black'>لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم </Text>
+                            </View>
+                           <View style = {{alignSelf : 'center' , marginTop: 10}}>
+                               <CustomButton onPress={this._send}  small>
+                                   باشه
+                               </CustomButton>
+                           </View>
+                        </BaseModal>
                     </Content>
                 </LinearGradient>
             </Container>

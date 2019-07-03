@@ -37,7 +37,8 @@ const login = StyleSheet.create({
         color : 'white'  , fontSize : hp('5%')
     },
     sendAgainButton : {
-        paddingTop: hp('.8%')
+        paddingTop: hp('.8%'),
+        alignItems : 'center'
     }
 });
 export default login;

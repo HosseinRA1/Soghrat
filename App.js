@@ -21,8 +21,8 @@ export default class App extends Component {
                     </Scene>
 
                     <Scene key='main' hideNavBar initial>
-                        <Scene key='home' component={Home} initial/>
-                        <Scene key='question_page' component={QuestionsPage} />
+                        <Scene key='home' component={Home} />
+                        <Scene key='question_page' component={QuestionsPage} initial/>
                     </Scene>
                 </Stack>
             </Router>
