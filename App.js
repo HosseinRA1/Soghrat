@@ -6,23 +6,31 @@ import Intro from "./src/screen/Intro";
 import Login from "./src/screen/auth/Login";
 import Verify from "./src/screen/auth/Verify";
 import Home from "./src/screen/home/Home";
+import Setting from "./src/screen/settings/Setting";
+import EditProfile from "./src/screen/settings/EditProfile";
 
 export default class App extends Component {
     render() {
         return (
             <Router>
-                <Stack key='root'  hideNavBar>
-                    <Scene key='splash' component={Splash} />
+                <Stack key='root' hideNavBar>
+                    <Scene key='splash' component={Splash}/>
                     <Scene key='intro' component={Intro}/>
 
-                    <Scene key='auth'  hideNavBar>
+                    <Scene key='auth' hideNavBar>
                         <Scene key='login' component={Login} />
                         <Scene key='verify' component={Verify} />
                     </Scene>
 
-                    <Scene key='main' hideNavBar initial>
+                    <Scene key='main'  hideNavBar >
                         <Scene key='home' component={Home} />
-                        <Scene key='question_page' component={QuestionsPage} initial/>
+                        <Scene key='question_page' component={QuestionsPage}/>
+                        {/*<Scene key ='submit_question' component = {SubmitQuestion}/>*/}
+                    </Scene>
+
+                    <Scene key='settings' initial hideNavBar>
+                        <Scene key = 'setting_page' component = {Setting} />
+                        <Scene key = 'edit_profile' component = {EditProfile} initial/>
                     </Scene>
                 </Stack>
             </Router>

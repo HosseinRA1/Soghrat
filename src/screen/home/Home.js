@@ -10,6 +10,7 @@ import {Actions} from 'react-native-router-flux'
 
 export default class Home extends Component {
     _start = () => Actions.replace('question_page');
+    _askButtun = () => {Actions.push('')}
     render() {
         return (
             <LinearGradient colors={['#023d4f', '#011828']}

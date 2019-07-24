@@ -1,12 +1,29 @@
 import React, {Component} from 'react'
 import LinearGradient from "react-native-linear-gradient";
-import {StatusBar, Image, View , TouchableOpacity} from "react-native";
+import {StatusBar, Image, View, TouchableOpacity} from "react-native";
 import {Icon, Content} from 'native-base'
 import question from '../assets/styles/question'
 import Text from "../components/Text";
 import CustomButton from "../components/CustomButton";
+import ImageView from 'react-native-image-view';
+
+const images = [
+    {
+        source: {
+            uri: 'https://static.farakav.com/files/pictures/01421057.jpg?h=192'
+        },
+        title: 'Paris',
+        width: 806,
+        height: 720,
+    },
+];
+
 
 export default class QuestionsPage extends Component {
+    state = {
+        isImageViewVisible: false
+    }
+
     render() {
         return (
             <LinearGradient colors={['#023d4f', '#011828']}
@@ -25,6 +42,23 @@ export default class QuestionsPage extends Component {
                         <Icon style={question.homeIcon} name="md-home"/>
                         <Text h4>خانه</Text>
                     </View>
+                </View>
+                <ImageView
+                    images={images}
+                    imageIndex={0}
+                    isVisible={this.state.isImageViewVisible}
+                />
+                <View style = {{width : 400  , alignItems : 'center'}}>
+                    <TouchableOpacity
+                        style={{width: 200, height: 100}}
+                        onPress={() => {
+                            this.setState({
+                                isImageViewVisible: true,
+                            });
+                        }}
+                    >
+                        <Image style={{width: 200, height: 100}} source={require('../assets/images/questionThumnail.jpg')}/>
+                    </TouchableOpacity>
                 </View>
                 <View style={question.questionView}>
                     <Text style={question.questionText} h2> کدوم رو ترجیح میدی؟ </Text>
@@ -47,7 +81,7 @@ export default class QuestionsPage extends Component {
                             هیچکدام
                         </CustomButton>
                     </View>
-                    <Text h3 style = {question.nextQuestionButton}>سوال بعدی</Text>
+                    <Text h3 style={question.nextQuestionButton}>سوال بعدی</Text>
                 </Content>
                 <View style={question.bottomIcons}>
 

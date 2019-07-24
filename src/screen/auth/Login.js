@@ -7,6 +7,7 @@ import question from "../../assets/styles/question";
 import CustomButton from "../../components/CustomButton";
 import Text from "../../components/Text";
 import BaseModal from "../../components/BaseModal";
+import {Actions} from 'react-native-router-flux'
 
 export default class Login extends Component {
     state = { text: '', correct:true };
@@ -46,7 +47,7 @@ export default class Login extends Component {
                                 style={[login.input , {borderColor : isCorrect ? 'white' : 'red', letterSpacing : 5}]}/>
                         </View>
                         <View style = {login.buttonView}>
-                            <CustomButton  onPress={this._send} icon>
+                            <CustomButton  onPress={() => Actions.replace('verify')} icon>
                                 مرحله بعد
                             </CustomButton>
                         </View>

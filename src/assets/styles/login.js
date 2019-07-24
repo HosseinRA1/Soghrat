@@ -24,9 +24,9 @@ const login = StyleSheet.create({
         marginTop : hp('1.7%')
     },
     contentStyle : {
-        flex: .9,
+        flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'space-around'
     },
     backIconView : {
       paddingTop : hp('4%'),

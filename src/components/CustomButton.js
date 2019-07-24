@@ -22,10 +22,11 @@ export default class CustomButton extends Component {
         small: PropTypes.bool,
         icon: PropTypes.bool,
         onPress: PropTypes.func,
+        borderColor : PropTypes.string
     };
 
     render() {
-        let style, pink, blue, transparent,icon, small, onPress;
+        let style, pink, blue, transparent,icon, small, onPress , borderColor ;
         ({
             style = {},
             pink,
@@ -33,6 +34,7 @@ export default class CustomButton extends Component {
             blue = false,
             transparent = false,
             small = false,
+            borderColor = 'white',
             onPress = () => {}
         } = this.props);
 
@@ -63,7 +65,7 @@ export default class CustomButton extends Component {
         if (transparent) {
             return (
 
-                <TouchableOpacity style={[styles.button, style , {borderWidth : .8 , borderColor : '#fff' ,  padding: 15,}]} onPress={onPress}>
+                <TouchableOpacity style={[styles.button, style , {borderWidth : .8 ,borderColor : borderColor, padding: 10,justifyContent: 'center' , alignItems: 'center'}]} onPress={onPress}>
                         <Text color = '#fff' style = {styles.text} h3>{this.props.children}</Text>
                 </TouchableOpacity>
             )
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
     },
     main: {
         borderRadius: 30,
-        padding: 15,
+        padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },

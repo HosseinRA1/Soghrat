@@ -11,14 +11,14 @@ const question = StyleSheet.create({
         width: wp('30%'),
         height: hp('22%'),
         resizeMode: 'contain',
-        top : -55,
-        position : 'absolute',
+        marginTop: -30
     },
     topView: {
         width :wp('100%'),
         height : hp('10%'),
         justifyContent: 'space-between',
         flexDirection: 'row',
+        alignItems : 'center'
 
     },
     topImageView : {
@@ -32,7 +32,8 @@ const question = StyleSheet.create({
         paddingRight: wp('7%'),
     },
     homeIcon: {
-        color: 'white'
+        color: 'white',
+        fontSize : hp('5%')
     },
     rateView : {
         width :wp('25%'),
@@ -42,8 +43,8 @@ const question = StyleSheet.create({
     questionView : {
         alignItems : 'center',
         justifyContent: 'center',
-        padding : 20,
-        marginTop : 30
+        padding : 10,
+        marginTop : 10
     },
     questionText :{
         textAlign : 'center'

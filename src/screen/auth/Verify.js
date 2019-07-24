@@ -9,6 +9,9 @@ import CustomButton from "../../components/CustomButton";
 import {Actions} from "react-native-router-flux";
 
 export default class Verify extends Component {
+    state = {
+        mobile : '09198686195'
+    }
     _verify = () => {
         Actions.replace('home')
     };
@@ -29,31 +32,31 @@ export default class Verify extends Component {
                         </TouchableOpacity>
                     </View>
                     <Content contentContainerStyle={login.contentStyle}>
-                        <View style={{justifyContent: 'space-between', flex: .7}}>
-                            <View style={{alignItems: 'center'}}>
-                                <Text h3>کد به شماره 195 8686 0919 ارسال شد</Text>
-                                <Text h4 onPress={this._verify} style={{textDecorationLine: 'underline'}}>ویرایش
-                                    شماره</Text>
-                            </View>
-                            <View style={login.buttonView}>
-                                <Text h4>کد تایید</Text>
-                                <TextInput
-                                    autoFocus={true}
-                                    keyboardType='number-pad'
-                                    maxLength={4}
-                                    style={[login.input, {borderColor: 'white', letterSpacing: 10}]}/>
-                              <View style = {{marginTop : 10}}>
-                                  <CustomButton onPress={this._verify} icon>
-                                      مرحله بعد
-                                  </CustomButton>
-                              </View>
-                            </View>
-                            <View style={login.sendAgainButton}>
-                                <Text> ثانیه 36 </Text>
-                                <Text h4 onPress={this._verify} style={{textDecorationLine: 'underline'}}>ارسال مجدد
-                                    کد</Text>
+
+                        <View style={{alignItems: 'center'}}>
+                            <Text h3>کد به شماره {this.state.mobile} ارسال شد</Text>
+                            <Text h4 onPress={this._verify} style={{textDecorationLine: 'underline'}}>ویرایش
+                                شماره</Text>
+                        </View>
+                        <View style={login.buttonView}>
+                            <Text h4>کد تایید</Text>
+                            <TextInput
+                                autoFocus={true}
+                                keyboardType='number-pad'
+                                maxLength={4}
+                                style={[login.input, {borderColor: 'white', letterSpacing: 10}]}/>
+                            <View style = {{marginTop : 10}}>
+                                <CustomButton onPress={this._verify} icon>
+                                    مرحله بعد
+                                </CustomButton>
                             </View>
                         </View>
+                        <View style={login.sendAgainButton}>
+                            <Text> 36 ثانیه </Text>
+                            <Text h4 onPress={this._verify} style={{textDecorationLine: 'underline'}}>ارسال مجدد
+                                کد</Text>
+                        </View>
+
                     </Content>
                 </LinearGradient>
             </Container>
