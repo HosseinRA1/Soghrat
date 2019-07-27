@@ -22,15 +22,15 @@ export default class App extends Component {
                         <Scene key='verify' component={Verify} />
                     </Scene>
 
-                    <Scene key='main'  hideNavBar >
-                        <Scene key='home' component={Home} />
+                    <Scene key='main' initial hideNavBar >
+                        <Scene key='home' component={Home} initial/>
                         <Scene key='question_page' component={QuestionsPage}/>
                         {/*<Scene key ='submit_question' component = {SubmitQuestion}/>*/}
                     </Scene>
 
-                    <Scene key='settings' initial hideNavBar>
+                    <Scene key='settings'  hideNavBar>
                         <Scene key = 'setting_page' component = {Setting} />
-                        <Scene key = 'edit_profile' component = {EditProfile} initial/>
+                        <Scene key = 'edit_profile' component = {EditProfile} />
                     </Scene>
                 </Stack>
             </Router>

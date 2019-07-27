@@ -9,8 +9,11 @@ import LinearGradient from "react-native-linear-gradient";
 import {Actions} from 'react-native-router-flux'
 
 export default class Home extends Component {
-    _start = () => Actions.replace('question_page');
-    _askButtun = () => {Actions.push('')}
+    _start = () => Actions.push('question_page');
+    _askButtun = () => {Actions.push('')};
+    _settingBtnPress = () => {
+      Actions.replace('setting_page')
+    };
     render() {
         return (
             <LinearGradient colors={['#023d4f', '#011828']}
@@ -22,12 +25,10 @@ export default class Home extends Component {
                         <Text h3>157800</Text>
                     </View>
 
-                    <View >
-                        <TouchableOpacity style = {home.iconButton}>
+                        <TouchableOpacity onPress = {this._settingBtnPress} style = {home.iconButton}>
                             <Icon name='md-settings' style={home.settingIcon}/>
                             <Text h5>تنظیمات</Text>
                         </TouchableOpacity>
-                    </View>
                 </View>
                 <View style = {home.body}>
                     <Image source = {require('../../assets/images/logo-png.png')} style = {home.logo} />

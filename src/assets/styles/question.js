@@ -11,7 +11,7 @@ const question = StyleSheet.create({
         width: wp('30%'),
         height: hp('22%'),
         resizeMode: 'contain',
-        marginTop: -30
+        marginTop: -30,
     },
     topView: {
         width :wp('100%'),
@@ -23,13 +23,13 @@ const question = StyleSheet.create({
     },
     topImageView : {
         width :wp('50%'),
-        alignItems : 'center'
+        marginLeft : 40
     },
     homeIconView : {
-        width :wp('25%'),
+        width : wp ('20%'),
         paddingTop: wp('5%'),
         alignItems : 'flex-end',
-        paddingRight: wp('7%'),
+        paddingRight: wp('10%'),
     },
     homeIcon: {
         color: 'white',
